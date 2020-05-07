@@ -1,0 +1,59 @@
+#access {
+  height: 689px;
+  position: relative;
+}
+
+.map {
+  z-index: 1;
+  width: 68.7%; //880%1280
+  height: 314px;
+  box-shadow: 10px 10px 99px #00000084;
+  border: 1px solid $border;
+  position: absolute;
+  top: 34%;
+  right: 0;
+
+  @include tab {
+    width: 90%;
+  }
+
+  @include sp {
+    width: 100%;
+  }
+}
+
+.bg-red {
+  width: 76.7%; //982%1280
+  height: 311px;
+  background-color: $red;
+  position: absolute;
+  top: 40%;
+  left: 0%;
+
+  @include tab {
+    width: 90%;
+    top: 60%;
+  }
+
+  @include sp {
+    width: 100%;
+  }
+}
+
+.bg-red p {
+  position: absolute;
+  top: 45%;
+  left: 4.2%; //54%1280
+  line-height: 2.5em; //推測
+  font-size: 1.4vw; //18px%1280px
+
+  @include tab {
+    font-size: 1.8rem; //18px
+    top: 55%;
+  }
+
+  @include sp {
+    left: 50%;
+    transform: translateX(-50%); // 左右中央
+  }
+}

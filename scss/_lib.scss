@@ -1,0 +1,113 @@
+///////////////////
+//      変数     //
+//////////////////
+$red:#800000;
+$black:#000000;
+$gray:#838383;
+$border:#707070;
+
+
+
+///////////////////
+//     mixin     //
+//////////////////
+@mixin pc {
+  @media screen and (min-width:960px){
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (max-width:959px){
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width:600px){
+    @content;
+  }
+}
+
+///////////////////
+//      共通     //
+//////////////////
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem; //18px
+  background-color: $black;
+  color: white;
+  font-family: Sawarabi Mincho, serif;
+}
+
+.inner {
+  padding: 100px 0 70px;
+  margin: 0 auto;
+  width: 85.4%; //1093%1280
+  text-align: center;
+}
+
+.title {
+  font-size: 3.6rem;
+  margin-bottom: 93px;
+  position: relative;
+
+  &::before { //title下線
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -22.5px;
+    display: inline-block;
+    width: 7.8rem;
+    height: 2px;
+    transform: translate(-50%);
+    background-color: white;
+  }
+
+}
+
+.hd-navmenu ul a:hover {
+  cursor: pointer;
+  border-bottom: 1px solid white;
+  padding-bottom: 2px;
+  font-weight: bold;
+
+  @include sp {
+  border-bottom: 1px solid $black;
+  }
+}
+
+.hd-btn {
+  z-index: 10;
+  position: fixed; //位置固定
+  bottom: 0;
+  left: 0;
+  width: 6.7%; //86%1280
+  min-width: 40px;
+  height: 261px;
+  border: 1px solid #D6D5D5;
+  background: transparent linear-gradient(189deg, #BF0000 0%, #641616 70%, #3D0202 100%, #390000 100%) 0% 0% no-repeat padding-box;
+  
+  &__border {
+    height: 244px;
+    padding: 4px;
+    border: 1px solid #D6D5D5;
+  }
+
+  & a {
+    color: white;
+    font-size: 1.5rem;
+    font-family: Sawarabi Mincho, serif;
+    writing-mode: vertical-rl;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 0.35rem;
+  }
+}
+
+.text-big { //太字部分
+  font-size: 2.5rem;
+}

@@ -1,0 +1,41 @@
+module.exports = {
+  mode:"development",
+  entry:"./src/index.js",
+  output:{
+    filename:"main.js",
+    path:__dirname
+  },
+  devServer:{
+    contentBase:"__dirname"
+  },
+  module:{
+    rules:[
+      {
+        test:/\.css$/,
+        use:[
+          "style-loader",
+          "css-loader"
+        ]
+      },
+      {
+        test:/\.scss$/,
+        use:[
+          "sass-loader"
+        ]
+      },
+      {
+        test:/\.(gif|png|jpg)$/,
+        use:[
+          {
+            loader:"url-loader",
+            options:{
+              lomit:51200,
+              name:"./img/[name].[ext]"
+            }
+          }
+        ]
+        
+      }
+    ]
+  }
+}

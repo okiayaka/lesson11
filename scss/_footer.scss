@@ -1,0 +1,11 @@
+small {
+  padding-bottom: 79px;
+
+  &::before {
+    content: "";
+    display: block;
+    border: 1px solid white;
+    width: 100%;
+    margin-bottom: 68px;
+  }
+}

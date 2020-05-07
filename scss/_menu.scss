@@ -1,0 +1,73 @@
+#menu p {
+  margin-bottom: 60px;
+
+  @include sp {
+    line-height: 2em;
+  }
+}
+
+.sp-br {
+  display: none; //非表示
+
+  @include sp {
+    display: block; //表示
+  }
+}
+
+.menu-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include sp {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.menu-item {
+  padding: 1rem; //推測
+
+  &:nth-child(1) {
+    width: 60%;
+  }
+
+  &:nth-child(2) {
+    width: 40%;
+  }
+
+  &:nth-child(3) {
+    width: 70%;
+  }
+
+  &:nth-child(4) {
+    width: 30%;
+  }
+
+  &:nth-child(odd) { //奇数
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  &:nth-child(even) { //偶数
+    @include sp {
+      width: 70%;
+    }
+  }
+}
+
+.menu-item img {
+  width: 100%;
+  height: 100%;
+
+  &:nth-child(even) {
+    @include sp {
+      width: auto;
+    }
+  }
+}
+
+
+
+

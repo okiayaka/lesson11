@@ -1,0 +1,87 @@
+#header {
+  height: 100vh;
+  position: relative;
+}
+
+.hd-text__wrap {
+  width: 5.7%;
+  height: 62.5%; //500%799
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 0%;
+  left: 15.3%; 
+  transform: translate(50%, 25%);
+
+  @include sp {
+    z-index: 1;
+    left: 50%;
+    top: 130px;
+    transform: translateX(-120%);
+  }
+}
+
+.hd-logo h1 {
+  writing-mode: vertical-rl;
+  font-size: 4rem;
+  letter-spacing: 1.6rem;
+  padding-left: 1rem;
+  text-indent: -2rem;
+
+  &::before {
+    white-space: pre;
+    content: "豚料理専門店\A";
+    font-size: 1.6rem;
+    letter-spacing: .4rem;
+  }
+}
+
+.hd-navmenu ul{
+  width: 74px;
+  height: 151px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include sp {
+    color: $black;
+  }
+}
+
+.hd-img {
+  width: 64.5%;
+  // height: 618px;
+  height: 77.3%; //618%799
+  background-image: url(../img/header.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 10px -10px 99px #00000062;
+  position: absolute;
+  top: 85px;
+  right: 85px;
+
+  &::after {
+    position: absolute;
+    top: -85px;
+    right: -85px;
+    z-index: -1;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $red;
+  }
+
+  @include tab {
+    width: 50%;
+  }
+
+  @include sp {
+    width: 70%;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+}
